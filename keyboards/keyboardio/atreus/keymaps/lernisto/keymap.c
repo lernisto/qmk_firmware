@@ -22,9 +22,9 @@ enum layer_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT(
-		         KC_Q,            KC_C,            KC_L,           KC_M,       KC_K,                                               KC_J,           KC_F,          KC_U,  KC_COMM,   KC_SCLN,
+		         KC_Q,            KC_C,            KC_L,           KC_M,       KC_K,                                               KC_B,           KC_F,          KC_U,  KC_COMM,   KC_SCLN,
 		         KC_I,            KC_S,    LALT_T(KC_R),   LGUI_T(KC_T),       KC_G,                                               KC_P,   RGUI_T(KC_N),  RALT_T(KC_E),   KC_A,      KC_O,
-		         KC_Y,            KC_V,            KC_W,           KC_D,       KC_X,          KC_Z,             KC_BSLS,           KC_B,           KC_H,       KC_MINS,   KC_DOT,   KC_QUOT,
+		         KC_Y,            KC_V,            KC_W,           KC_D,       KC_X,          KC_Z,             KC_BSLS,           KC_J,           KC_H,       KC_MINS,   KC_DOT,   KC_QUOT,
        LCTL_T(KC_ESC),  TLL(_FUNCTION),         XXXXXXX,   TLL(_EXTEND), OSM(MOD_LSFT),    KC_BSPC,              KC_TAB,  MEH_T(KC_SPC),   TLL(_SYMNUM),       KC_SLSH,   KC_GRV,   RCTL_T(KC_ENT)
 		),
 	[_EXTEND] = LAYOUT(
