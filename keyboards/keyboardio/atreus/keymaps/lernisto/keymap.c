@@ -40,12 +40,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		      _______,       _______, TG(_FUNCTION),       _______,  _______,  _______,          _______,  _______,   _______,     _______,   _______, _______
 	),
 	[_SYMNUM] = LAYOUT(
-			   KC_EXLM,        KC_AT,       KC_HASH,       KC_COLN,  KC_SCLN,                                 KC_PEQL,    KC_P7,      KC_P8,    KC_P9,  KC_PPLS,
-                KC_BSLS,      KC_PIPE,       KC_LPRN,       KC_LCBR,  KC_LBRC,                                 KC_PAST,    KC_P4,      KC_P5,    KC_P6,  KC_PMNS,
-                KC_MINS,      KC_UNDS,       KC_RPRN,       KC_RCBR,  KC_RBRC,   XXXXXXX,      TLL(_MOUSE),    KC_PCMM,    KC_P1,      KC_P2,    KC_P3,  KC_PSLS,
+			    KC_EXLM,         KC_AT,      KC_HASH,        KC_DLR,  KC_PERC,                                 KC_PEQL,    KC_P7,      KC_P8,    KC_P9,  KC_PPLS,
+                KC_ASTR,        KC_EQL,      KC_LCBR,       KC_LPRN,  KC_LBRC,                                 KC_PAST,    KC_P4,      KC_P5,    KC_P6,  KC_PMNS,
+                KC_CIRC,       KC_AMPR,      KC_RCBR,       KC_RPRN,  KC_RBRC,   XXXXXXX,      TLL(_MOUSE),    KC_PCMM,    KC_P1,      KC_P2,    KC_P3,  KC_PSLS,
                 _______,       _______,   TG(_SYMNUM),       _______,  _______,   _______,          _______,    _______,  _______,      KC_P0,  KC_PDOT,  RCTL_T(KC_PENT)
         ),
-        [_MOUSE] = LAYOUT(
+    [_MOUSE] = LAYOUT(
                 KC_ACL0,      KC_WH_L,       KC_MS_U,       KC_WH_R,  KC_WH_U,                               UC(0X2260),    KC_AMPR,      KC_GRV,    KC_TILD,  UC(0X00D7),
                 KC_ACL1,      KC_MS_L,       KC_MS_D,       KC_MS_R,  KC_WH_D,                               UC(0X0087),     KC_DLR,     KC_PERC,    KC_CIRC,  UC(0X0081),
                 KC_ACL2,      KC_BTN4,       KC_BTN3,       KC_BTN2,  KC_BTN1,   KC_BTN5,          XXXXXXX,  UC(0X0080),    KC_EXLM,       KC_AT,    KC_HASH,  UC(0X00F7),
