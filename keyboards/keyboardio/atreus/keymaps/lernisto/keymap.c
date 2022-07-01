@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MOUSE] = LAYOUT(
                 KC_ACL0,      KC_WH_L,       KC_MS_U,       KC_WH_R,  KC_WH_U,                               _______,     _______,    _______,     _______,    _______,
                 KC_ACL1,      KC_MS_L,       KC_MS_D,       KC_MS_R,  KC_WH_D,                               _______,     _______,    _______,     _______,    _______,
-                KC_ACL2,      KC_BTN4,       KC_BTN3,       KC_BTN2,  KC_BTN1,   KC_BTN5,          XXXXXXX,  _______,     _______,    _______,     _______,    _______,
+                KC_ACL2,      KC_BTN4,       KC_BTN1,       KC_BTN2,  KC_BTN3,   KC_BTN5,          XXXXXXX,  _______,     _______,    _______,     _______,    _______,
                 _______,      _______,    TG(_MOUSE),       _______,  _______,   _______,          _______,     _______,    _______,     _______,    _______,     _______
         ),
 
