@@ -1,7 +1,7 @@
 #pragma once
 
 #define IGNORE_MOD_TAP_INTERRUPT
-#define TAPPING_FORCE_HOLD
+//#define TAPPING_FORCE_HOLD
 #undef TAPPING_TERM
 #define TAPPING_TERM 250
 #define RETRO_TAPPING
