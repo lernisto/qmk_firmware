@@ -15,14 +15,17 @@ enum layer_names {
 	_EXTEND,
 	_FUNCTION,
     _SYMNUM,
+    //_UNISYM,
 	_MOUSE,
-	//_KYB, // keyboard control
 };
+
 #define PKC_UNDO G(KC_Z)
 #define PKC_CUT G(KC_X)
 #define PKC_COPY G(KC_C)
 #define PKC_PSTE G(KC_V)
-
+/*TODO replace the unicode mode keys with more general platform selection
+e.g. Mac mode sends G(KC_Z) for undo, while Linux and Windows modes send C(KC_Z)
+*/
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT(
@@ -32,9 +35,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        LCTL_T(KC_ESC),  TLL(_FUNCTION),         XXXXXXX,   TLL(_EXTEND), OSM(MOD_LSFT),    KC_BSPC,              KC_TAB,  MEH_T(KC_SPC),   TLL(_SYMNUM),       KC_SLSH,   KC_GRV,   RCTL_T(KC_ENT)
 		),
 	[_EXTEND] = LAYOUT(
-			   KC_ESC,       KC_WBAK,       KC_FIND,       KC_WFWD,   KC_INS,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
+			   KC_INS,       UC_M_MA,       UC_M_LN,       UC_M_WC,  KC_APP,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,   G(KC_PLUS),
 		OSM(MOD_LALT), OSM(MOD_LGUI), OSM(MOD_LSFT), OSM(MOD_LCTL),  KC_RALT,                                KC_PGDN,  KC_LEFT,   KC_DOWN,   KC_RGHT,  G(KC_MINS),
-			 PKC_UNDO,       PKC_CUT,      PKC_COPY,      PKC_PSTE,  KC_LGUI,  KC_DEL,        KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,    KC_LOCK,   KC_APP,     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
+			 PKC_UNDO,       PKC_CUT,      PKC_COPY,      PKC_PSTE,  KC_LGUI,  KC_DEL,        KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,    KC_LOCK,TG(_MOUSE),     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
 		      _______,       _______,   TG(_EXTEND),       _______,  _______,  _______,          _______,    _______,   _______,  KC_LSFT,   _______, _______
 	),
 	[_FUNCTION] = LAYOUT(
@@ -44,16 +47,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		      _______,       _______, TG(_FUNCTION),       _______,  _______,  _______,          _______,  _______,   _______,     _______,   _______, _______
 	),
 	[_SYMNUM] = LAYOUT(
-			    KC_EXLM,         KC_AT,      KC_HASH,        KC_DLR,  KC_PERC,                                 KC_PEQL,    KC_P7,      KC_P8,    KC_P9,  KC_PPLS,
+			    KC_EXLM,         KC_AT,      KC_HASH,        KC_DLR,  KC_PERC,                                 KC_PSLS,    KC_P7,      KC_P8,    KC_P9,  KC_PPLS,
                 KC_ASTR,        KC_EQL,      KC_LCBR,       KC_LPRN,  KC_LBRC,                                 KC_PAST,    KC_P4,      KC_P5,    KC_P6,  KC_PMNS,
-                KC_CIRC,       KC_AMPR,      KC_RCBR,       KC_RPRN,  KC_RBRC,   KC_DEL,      TLL(_MOUSE),    KC_PCMM,    KC_P1,      KC_P2,    KC_P3,  KC_PSLS,
-                _______,       _______,   TG(_SYMNUM),       _______,  _______,   _______,          _______,    _______,  _______,      KC_P0,  KC_PDOT,  RCTL_T(KC_PENT)
+                KC_CIRC,       KC_AMPR,      KC_RCBR,       KC_RPRN,  KC_RBRC,   KC_DEL,           XXXXXXX,    KC_PCMM,    KC_P1,      KC_P2,    KC_P3,  KC_PEQL,
+                _______,       _______,   TG(_SYMNUM),       _______,  _______,   _______,         _______,    _______,  _______,      KC_P0,  KC_PDOT,  RCTL_T(KC_PENT)
         ),
+        /*
+    [_UNISYM] = LAYOUT(
+                _______,      _______,       _______,       _______,  _______,                               _______,     _______,    _______,     _______,    _______,
+                _______,      _______,       _______,       _______,  _______,                               _______,     _______,    _______,     _______,    _______,
+                _______,      _______,       _______,       _______,  _______,   _______,          _______,  _______,     _______,    _______,     _______,    _______,
+                _______,       _______,  TG(_UNISYM),       _______,  _______,   _______,          _______,     _______,    _______,     _______,    _______,     _______
+        ),
+        */
     [_MOUSE] = LAYOUT(
-                KC_ACL0,      KC_WH_L,       KC_MS_U,       KC_WH_R,  KC_WH_U,                               UC(0X2260),    KC_AMPR,      KC_GRV,    KC_TILD,  UC(0X00D7),
-                KC_ACL1,      KC_MS_L,       KC_MS_D,       KC_MS_R,  KC_WH_D,                               UC(0X0087),     KC_DLR,     KC_PERC,    KC_CIRC,  UC(0X0081),
-                KC_ACL2,      KC_BTN4,       KC_BTN3,       KC_BTN2,  KC_BTN1,   KC_BTN5,          XXXXXXX,  UC(0X0080),    KC_EXLM,       KC_AT,    KC_HASH,  UC(0X00F7),
-                _______,       _______,    TG(_MOUSE),       _______,  _______,   _______,          _______,     _______,    _______,     _______,    _______,     _______
+                KC_ACL0,      KC_WH_L,       KC_MS_U,       KC_WH_R,  KC_WH_U,                               _______,     _______,    _______,     _______,    _______,
+                KC_ACL1,      KC_MS_L,       KC_MS_D,       KC_MS_R,  KC_WH_D,                               _______,     _______,    _______,     _______,    _______,
+                KC_ACL2,      KC_BTN4,       KC_BTN3,       KC_BTN2,  KC_BTN1,   KC_BTN5,          XXXXXXX,  _______,     _______,    _______,     _______,    _______,
+                _______,      _______,    TG(_MOUSE),       _______,  _______,   _______,          _______,     _______,    _______,     _______,    _______,     _______
         ),
 
 };
