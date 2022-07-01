@@ -19,6 +19,7 @@ enum layer_names {
 	_MOUSE,
 };
 
+
 #define PKC_UNDO G(KC_Z)
 #define PKC_CUT G(KC_X)
 #define PKC_COPY G(KC_C)
@@ -35,14 +36,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        LCTL_T(KC_ESC),  TLL(_FUNCTION),         XXXXXXX,   TLL(_EXTEND), OSM(MOD_LSFT),    KC_BSPC,              KC_TAB,  MEH_T(KC_SPC),   TLL(_SYMNUM),       KC_SLSH,   KC_GRV,   RCTL_T(KC_ENT)
 		),
 	[_EXTEND] = LAYOUT(
-			   KC_INS,       UC_M_MA,       UC_M_LN,       UC_M_WC,  KC_APP,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,   G(KC_PLUS),
-		OSM(MOD_LALT), OSM(MOD_LGUI), OSM(MOD_LSFT), OSM(MOD_LCTL),  KC_RALT,                                KC_PGDN,  KC_LEFT,   KC_DOWN,   KC_RGHT,  G(KC_MINS),
-			 PKC_UNDO,       PKC_CUT,      PKC_COPY,      PKC_PSTE,  KC_LGUI,  KC_DEL,        KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,    KC_LOCK,TG(_MOUSE),     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
+			   KC_APP,       KC_WBAK,       G(KC_L),       KC_WFWD,   KC_INS,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
+		OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), OSM(MOD_LGUI),  KC_RALT,                                KC_PGDN,  KC_LEFT,   KC_DOWN,   KC_RGHT,  G(KC_MINS),
+			 PKC_UNDO,       PKC_CUT,      PKC_COPY,      PKC_PSTE,  KC_LGUI,  KC_DEL,         KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,   KC_LOCK,TG(_MOUSE),     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
 		      _______,       _______,   TG(_EXTEND),       _______,  _______,  _______,          _______,    _______,   _______,  KC_LSFT,   _______, _______
 	),
 	[_FUNCTION] = LAYOUT(
 			  KC_MUTE,       KC_VOLD,       KC_VOLU,       KC_MPLY,  KC_BRIU,                               KC_F12,    KC_F7,     KC_F8,    KC_F9,  KC_F15,
-		OSM(MOD_LALT), OSM(MOD_LGUI), OSM(MOD_LSFT), OSM(MOD_LCTL),  KC_BRID,                               KC_F11,    KC_F4,     KC_F5,    KC_F6,  KC_F14,
+		OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), OSM(MOD_LGUI),  KC_BRID,                               KC_F11,    KC_F4,     KC_F5,    KC_F6,  KC_F14,
 			  KC_SLCK,       KC_PAUS,       KC_MPRV,       KC_MNXT,  KC_STOP,  KC_DEL,           XXXXXXX,   KC_F10,    KC_F1,     KC_F2,    KC_F3, KC_F13,
 		      _______,       _______, TG(_FUNCTION),       _______,  _______,  _______,          _______,  _______,   _______,     _______,   _______, _______
 	),
@@ -63,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MOUSE] = LAYOUT(
                 KC_ACL0,      KC_WH_L,       KC_MS_U,       KC_WH_R,  KC_WH_U,                               _______,     _______,    _______,     _______,    _______,
                 KC_ACL1,      KC_MS_L,       KC_MS_D,       KC_MS_R,  KC_WH_D,                               _______,     _______,    _______,     _______,    _______,
-                KC_ACL2,      KC_BTN4,       KC_BTN1,       KC_BTN2,  KC_BTN3,   KC_BTN5,          XXXXXXX,  _______,     _______,    _______,     _______,    _______,
+                KC_ACL2,      KC_BTN4,       KC_BTN1,       KC_BTN2,  KC_BTN1,   KC_BTN5,          XXXXXXX,  _______,     _______,    _______,     _______,    _______,
                 _______,      _______,    TG(_MOUSE),       _______,  _______,   _______,          _______,     _______,    _______,     _______,    _______,     _______
         ),
 
@@ -75,7 +76,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
 testing
 testing
-
 
 
 effort: 3
