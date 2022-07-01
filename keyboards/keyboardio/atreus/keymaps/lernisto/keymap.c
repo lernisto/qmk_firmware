@@ -18,6 +18,10 @@ enum layer_names {
 	_MOUSE,
 	//_KYB, // keyboard control
 };
+#define PKC_UNDO G(KC_Z)
+#define PKC_CUT G(KC_X)
+#define PKC_COPY G(KC_C)
+#define PKC_PSTE G(KC_V)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -30,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_EXTEND] = LAYOUT(
 			   KC_ESC,       KC_WBAK,       KC_FIND,       KC_WFWD,   KC_INS,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
 		OSM(MOD_LALT), OSM(MOD_LGUI), OSM(MOD_LSFT), OSM(MOD_LCTL),  KC_RALT,                                KC_PGDN,  KC_LEFT,   KC_DOWN,   KC_RGHT,  G(KC_MINS),
-			  KC_UNDO,        KC_CUT,       KC_COPY,       KC_PSTE,  KC_LGUI,  KC_DEL,        KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,    KC_LOCK,   KC_APP,     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
+			 PKC_UNDO,       PKC_CUT,      PKC_COPY,      PKC_PSTE,  KC_LGUI,  KC_DEL,        KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,    KC_LOCK,   KC_APP,     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
 		      _______,       _______,   TG(_EXTEND),       _______,  _______,  _______,          _______,    _______,   _______,  KC_LSFT,   _______, _______
 	),
 	[_FUNCTION] = LAYOUT(
