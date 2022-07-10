@@ -12,9 +12,9 @@ I want a hybrid between OSL and TT.
 
 enum layer_names {
 	_BASE,
+    _SYMNUM,
 	_EXTEND,
 	_FUNCTION,
-    _SYMNUM,
     //_UNISYM,
 	_MOUSE,
 };
@@ -34,8 +34,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		         KC_I,            KC_S,    LALT_T(KC_R),   LGUI_T(KC_T),       KC_G,                                               KC_P,   RGUI_T(KC_N),  RALT_T(KC_E),   KC_A,      KC_O,
 		         KC_Y,            KC_V,            KC_W,           KC_D,       KC_X,          KC_Z,             KC_BSLS,           KC_J,           KC_H,       KC_MINS,   KC_DOT,   KC_QUOT,
        LCTL_T(KC_ESC),  TLL(_FUNCTION),         XXXXXXX,   TLL(_EXTEND), OSM(MOD_LSFT),    KC_BSPC,              KC_TAB,  MEH_T(KC_SPC),   TLL(_SYMNUM),       KC_SLSH,   KC_GRV,   RCTL_T(KC_ENT)
-		),
-	[_EXTEND] = LAYOUT(
+    ),
+	[_SYMNUM] = LAYOUT(
+			    KC_EXLM,         KC_AT,      KC_HASH,        KC_DLR,  KC_PERC,                                 KC_PSLS,    KC_P7,      KC_P8,    KC_P9,  KC_PPLS,
+                KC_ASTR,        KC_EQL,      KC_LCBR,       KC_LPRN,  KC_LBRC,                                 KC_PAST,    KC_P4,      KC_P5,    KC_P6,  KC_PMNS,
+                KC_CIRC,       KC_AMPR,      KC_RCBR,       KC_RPRN,  KC_RBRC,   KC_DEL,           XXXXXXX,    KC_COMM,    KC_P1,      KC_P2,    KC_P3,  KC_PEQL,
+                _______,       _______,   TG(_SYMNUM),       _______,  _______,   _______,         _______,    _______,  _______,      KC_P0,  KC_PDOT,  RCTL_T(KC_PENT)
+    ),
+     [_EXTEND] = LAYOUT(
 			   KC_APP,       KC_WBAK,       G(KC_L),       KC_WFWD,   KC_INS,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
 		OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), OSM(MOD_LGUI),  KC_RALT,                                KC_PGDN,  KC_LEFT,   KC_DOWN,   KC_RGHT,  G(KC_MINS),
 			 PKC_UNDO,       PKC_CUT,      PKC_COPY,      PKC_PSTE,  KC_LGUI,  KC_DEL,         KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,   KC_LOCK,TG(_MOUSE),     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
@@ -47,13 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 			  KC_SLCK,       KC_PAUS,       KC_MPRV,       KC_MNXT,  KC_STOP,  KC_DEL,           XXXXXXX,   KC_F10,    KC_F1,     KC_F2,    KC_F3, KC_F13,
 		      _______,       _______, TG(_FUNCTION),       _______,  _______,  _______,          _______,  _______,   _______,     _______,   _______, _______
 	),
-	[_SYMNUM] = LAYOUT(
-			    KC_EXLM,         KC_AT,      KC_HASH,        KC_DLR,  KC_PERC,                                 KC_PSLS,    KC_P7,      KC_P8,    KC_P9,  KC_PPLS,
-                KC_ASTR,        KC_EQL,      KC_LCBR,       KC_LPRN,  KC_LBRC,                                 KC_PAST,    KC_P4,      KC_P5,    KC_P6,  KC_PMNS,
-                KC_CIRC,       KC_AMPR,      KC_RCBR,       KC_RPRN,  KC_RBRC,   KC_DEL,           XXXXXXX,    KC_COMM,    KC_P1,      KC_P2,    KC_P3,  KC_PEQL,
-                _______,       _______,   TG(_SYMNUM),       _______,  _______,   _______,         _______,    _______,  _______,      KC_P0,  KC_PDOT,  RCTL_T(KC_PENT)
-        ),
-        /*
+	   /*
     [_UNISYM] = LAYOUT(
                 _______,      _______,       _______,       _______,  _______,                               _______,     _______,    _______,     _______,    _______,
                 _______,      _______,       _______,       _______,  _______,                               _______,     _______,    _______,     _______,    _______,
