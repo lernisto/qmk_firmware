@@ -24,6 +24,8 @@ enum layer_names {
 #define PKC_CUT G(KC_X)
 #define PKC_COPY G(KC_C)
 #define PKC_PSTE G(KC_V)
+#define PKC_NAPP G(KC_TAB) /* cycle application */
+#define PKC_NWIN G(KC_GRV) /* cycle window */
 /*TODO replace the unicode mode keys with more general platform selection
 e.g. Mac mode sends G(KC_Z) for undo, while Linux and Windows modes send C(KC_Z)
 */
@@ -38,11 +40,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_SYMNUM] = LAYOUT(
 			    KC_EXLM,         KC_AT,      KC_HASH,        KC_DLR,  KC_PERC,                                 KC_PSLS,    KC_P7,      KC_P8,    KC_P9,  KC_PPLS,
                 KC_ASTR,        KC_EQL,      KC_LCBR,       KC_LPRN,  KC_LBRC,                                 KC_PAST,    KC_P4,      KC_P5,    KC_P6,  KC_PMNS,
-                KC_CIRC,       KC_AMPR,      KC_RCBR,       KC_RPRN,  KC_RBRC,   KC_DEL,           XXXXXXX,    KC_COMM,    KC_P1,      KC_P2,    KC_P3,  KC_PEQL,
+                KC_CIRC,       KC_AMPR,      KC_RCBR,       KC_RPRN,  KC_RBRC,   KC_DEL,            KC_APP,    KC_COMM,    KC_P1,      KC_P2,    KC_P3,  KC_PEQL,
                 _______,       _______,   TG(_SYMNUM),       _______,  _______,   _______,         _______,    _______,  _______,      KC_P0,  KC_PDOT,  RCTL_T(KC_PENT)
     ),
      [_EXTEND] = LAYOUT(
-			   KC_APP,       KC_WBAK,       G(KC_L),       KC_WFWD,   KC_INS,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
+			  KC_WBAK,       KC_WFWD,      PKC_NAPP,      PKC_NWIN,  KC_INS,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
 		OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), OSM(MOD_LGUI),  KC_RALT,                                KC_PGDN,  KC_LEFT,   KC_DOWN,   KC_RGHT,  G(KC_MINS),
 			 PKC_UNDO,       PKC_CUT,      PKC_COPY,      PKC_PSTE,  KC_LGUI,  KC_DEL,         KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,   KC_LOCK,TG(_MOUSE),     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
 		      _______,       _______,   TG(_EXTEND),       _______,  _______,  _______,          _______,    _______,   _______,  KC_LSFT,   _______, _______
@@ -280,4 +282,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+
+Ok. This is what I think. I am thinking out loud and don't know yet how to treat this assignment. Don't be offended, because I don't think it is your fault.
+
+
+
+
+
+
+"Remember, Ana is looking for the team who can raise as much money as they can in their neighborhood for Relief Aid while also involving as many neighbors as possible"
+
+
+This is in the first paragraph of the reading https://byui.instructure.com/courses/194312/pages/w06-prepare-team-project?module_item_id=25367320. This sentence suggests to me that Ana might be a human who cares about the community she lives in. She may even be a Christian who has taken Jacob 2:17-19 to heart.
+
+
+But I am wrong. https://byui.instructure.com/courses/194312/pages/w04-prepare-team-project?module_item_id=25366764  clarifies what neighborhood involvement means:
+
+
+"How will you involve your neighbors? You will set a price for the drink that will attract as many neighbor-customers as possible."
+
+
+She wants you to work for free to sell lemonade to as many marks as possible and suck as much money out of them as possible. It's all about the price. She wants us to sound like an overzealous MBA student who knows the price of everything and the value of nothing.
+
+
+The tone of your presenter notes feels a bit more "sales-y" than I would want to use when addressing someone with a heart as big as her bank account who cares about refugee welfare and community outreach. But if I am reading the rubric correctly, this is exactly what is wanted.
+
+
+I am disgusted.
+
+
+rule 6.
 */
