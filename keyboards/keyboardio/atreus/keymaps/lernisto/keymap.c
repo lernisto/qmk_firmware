@@ -44,15 +44,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 _______,       _______,   TG(_SYMNUM),       _______,  _______,   _______,         _______,    _______,  _______,      KC_P0,  KC_PDOT,  RCTL_T(KC_PENT)
     ),
      [_EXTEND] = LAYOUT(
-			   KC_APP,       KC_WBAK,       G(KC_L),       KC_WFWD,   KC_INS,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
+			   KC_APP,       KC_WBAK,       G(KC_L),       KC_WFWD,  KC_MPLY,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
 		OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), OSM(MOD_LGUI),  KC_RALT,                                KC_PGDN,  KC_LEFT,   KC_DOWN,   KC_RGHT,  G(KC_MINS),
 			 PKC_UNDO,       PKC_CUT,      PKC_COPY,      PKC_PSTE,  KC_LGUI,  KC_DEL,         KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,   KC_LOCK,TG(_MOUSE),     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
 		      _______,       _______,   TG(_EXTEND),       _______,  _______,  _______,          _______,    _______,   _______,  KC_LSFT,   _______, _______
 	),
 	[_FUNCTION] = LAYOUT(
-			  KC_MUTE,       KC_VOLD,       KC_VOLU,       KC_MPLY,  KC_BRIU,                               KC_F12,    KC_F7,     KC_F8,    KC_F9,  KC_F15,
-		OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), OSM(MOD_LGUI),  KC_BRID,                               KC_F11,    KC_F4,     KC_F5,    KC_F6,  KC_F14,
-			  KC_SLCK,       KC_PAUS,       KC_MPRV,       KC_MNXT,  KC_STOP,  KC_DEL,           XXXXXXX,   KC_F10,    KC_F1,     KC_F2,    KC_F3, KC_F13,
+			  KC_MUTE,       KC_VOLD,       KC_VOLU,       KC_BRID,  KC_BRIU,                               KC_F12,    KC_F7,     KC_F8,    KC_F9,  KC_F15,
+		OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), OSM(MOD_LGUI),  KC_STOP,                               KC_F11,    KC_F4,     KC_F5,    KC_F6,  KC_F14,
+			  KC_SLCK,       KC_PAUS,       KC_MPRV,       KC_MNXT,  KC_INS,  KC_DEL,           XXXXXXX,   KC_F10,    KC_F1,     KC_F2,    KC_F3, KC_F13,
 		      _______,       _______, TG(_FUNCTION),       _______,  _______,  _______,          _______,  _______,   _______,     _______,   _______, _______
 	),
 	   /*
