@@ -24,8 +24,8 @@ enum layer_names {
 #define PKC_CUT G(KC_X)
 #define PKC_COPY G(KC_C)
 #define PKC_PSTE G(KC_V)
-#define PKC_NAPP G(KC_TAB) /* cycle application */
-#define PKC_NWIN G(KC_GRV) /* cycle window */
+#define PKC_NAPP G(KC_TAB)
+#define PKC_NAPP G(KC_TAB)
 /*TODO replace the unicode mode keys with more general platform selection
 e.g. Mac mode sends G(KC_Z) for undo, while Linux and Windows modes send C(KC_Z)
 */
@@ -38,13 +38,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        LCTL_T(KC_ESC),  TLL(_FUNCTION),         XXXXXXX,   TLL(_EXTEND), OSM(MOD_LSFT),    KC_BSPC,              KC_TAB,  MEH_T(KC_SPC),   TLL(_SYMNUM),       KC_SLSH,   KC_GRV,   RCTL_T(KC_ENT)
     ),
 	[_SYMNUM] = LAYOUT(
-			    KC_EXLM,         KC_AT,      KC_HASH,        KC_DLR,  KC_PERC,                                 KC_PSLS,    KC_P7,      KC_P8,    KC_P9,  KC_PPLS,
-                KC_ASTR,        KC_EQL,      KC_LCBR,       KC_LPRN,  KC_LBRC,                                 KC_PAST,    KC_P4,      KC_P5,    KC_P6,  KC_PMNS,
-                KC_CIRC,       KC_AMPR,      KC_RCBR,       KC_RPRN,  KC_RBRC,   KC_DEL,            KC_APP,    KC_COMM,    KC_P1,      KC_P2,    KC_P3,  KC_PEQL,
+			    KC_EXLM,         KC_AT,      KC_HASH,        KC_DLR,  KC_PERC,                                       KC_PSLS,    KC_P7,      KC_P8,    KC_P9,  KC_PPLS,
+                KC_ASTR,        KC_EQL,      KC_LCBR,       KC_LPRN,  KC_LBRC,                                       KC_PAST,    KC_P4,      KC_P5,    KC_P6,  KC_PMNS,
+                KC_CIRC,       KC_AMPR,      KC_RCBR,       KC_RPRN,  KC_RBRC,   KC_DEL,           OSM(MOD_LALT),    KC_COMM,    KC_P1,      KC_P2,    KC_P3,  KC_PEQL,
                 _______,       _______,   TG(_SYMNUM),       _______,  _______,   _______,         _______,    _______,  _______,      KC_P0,  KC_PDOT,  RCTL_T(KC_PENT)
     ),
      [_EXTEND] = LAYOUT(
-			  KC_WBAK,       KC_WFWD,      PKC_NAPP,      PKC_NWIN,  KC_INS,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
+			   KC_APP,       KC_WBAK,       G(KC_L),       KC_WFWD,   KC_INS,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
 		OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), OSM(MOD_LGUI),  KC_RALT,                                KC_PGDN,  KC_LEFT,   KC_DOWN,   KC_RGHT,  G(KC_MINS),
 			 PKC_UNDO,       PKC_CUT,      PKC_COPY,      PKC_PSTE,  KC_LGUI,  KC_DEL,         KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,   KC_LOCK,TG(_MOUSE),     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
 		      _______,       _______,   TG(_EXTEND),       _______,  _______,  _______,          _______,    _______,   _______,  KC_LSFT,   _______, _______
