@@ -7,6 +7,8 @@ I want a hybrid between OSL and TT.
 	If I tap the layer key once, it activates the layer for one key, like OSL
 	If I tap the layer key twice, it activates the layer until it is deactivated through some other mechanism.
 	If I hold the layer key, it acts like MO.
+
+    Never mind this. TT is what I want. A one shot key would drive me crazy.
 */
 #define TLL(x) TT(x)
 
@@ -25,7 +27,7 @@ enum layer_names {
 #define PKC_COPY G(KC_C)
 #define PKC_PSTE G(KC_V)
 #define PKC_NAPP G(KC_TAB)
-#define PKC_NAPP G(KC_TAB)
+#define PKC_NWIN G(KC_GRV)
 /*TODO replace the unicode mode keys with more general platform selection
 e.g. Mac mode sends G(KC_Z) for undo, while Linux and Windows modes send C(KC_Z)
 */
@@ -44,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 _______,       _______,   TG(_SYMNUM),       _______,  _______,   _______,         _______,    _______,  _______,      KC_P0,  KC_PDOT,  RCTL_T(KC_PENT)
     ),
      [_EXTEND] = LAYOUT(
-			   KC_APP,       KC_WBAK,       G(KC_L),       KC_WFWD,  KC_MPLY,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
+		     KC_WBAK,        KC_WFWD,      PKC_NAPP,      PKC_NWIN,  KC_MPLY,                                KC_PGUP,  KC_HOME,     KC_UP,    KC_END,  G(KC_PLUS),
 		OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), OSM(MOD_LGUI),  KC_RALT,                                KC_PGDN,  KC_LEFT,   KC_DOWN,   KC_RGHT,  G(KC_MINS),
 			 PKC_UNDO,       PKC_CUT,      PKC_COPY,      PKC_PSTE,  KC_LGUI,  KC_DEL,         KC_PSCR, /*?*/KC_RGUI,  KC_CAPS,   KC_LOCK,TG(_MOUSE),     G(KC_0),  // KC_LOCK useful for locking SHIFT to select stuff
 		      _______,       _______,   TG(_EXTEND),       _______,  _______,  _______,          _______,    _______,   _______,  KC_LSFT,   _______, _______
